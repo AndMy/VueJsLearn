@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJs</title>
+    <style>
+        .title {
+            font-size: 50px;
+            color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 
+            v-bind指令绑定style属性
+            
+        -->
+        <!-- 常规绑定 -->
+        
+        <!-- 动态绑定 v-bind -->
+        
+        <!--
+            v-bind动态绑定，给style属性绑定一个对象{} ，这个{}对象也可以通过方法来返回
+            <h1 :style="{属性名1: 属性值1, 属性名2: 属性值2}">{{message}}</h1>
+            -- 属性值：需要加上单引号;单引号表示字符串,不加单引号表示变量
+        -->
+        <!-- 直接放对象 -->
+        <h1 :style="{fontSize: '50px', color: 'red'}">{{message}}</h1>
+        <!-- 调用方法，方法返回对象 -->
+        <h1 :style="getMyStyle()">{{message}}</h1>
+    </div>
+    
+    <script src="../js/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:"#app",//用于挂载要管理的元素
+            data:{//定义数据
+                message:"你好，vuejs"
+            },
+            methods: {//定义一些方法
+                getMyStyle : function (){
+                    return {fontSize: '50px', color: 'red'};
+                }
+            }
+        })
+    </script>
+</body>
+</html>
