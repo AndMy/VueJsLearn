@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJs</title>
+    <style>
+        [v-cloak]{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        插值操用 {{}} 符号 :{{}} 只能适用于标签的内容中，即：<h>{{}}<h/>;如果需要在属性中使用,需要在属性的前面条件v-bind,即v-bind:src=""
+        v-text : 显示文本
+        v-once : 只显示一次
+        v-for : 循环
+        v-cloak : 斗篷
+        v-on : 点击事件
+
+    -->
+    <div id="app" v-cloak>{{message}}</div>
+    <!-- 引入vue js -->
+    <script src="../js/vue.js"></script>
+    <script>
+        //当页面加载vue时,卡顿了,导致div先执行,vue后执行;会出现这样{{message}}的效果,然后再出现真正的数据
+        //在vue解析之前,有一个v-cloak属性
+        //在vue解析之后,会把div的属性删除,没有v-cloak属性
+        setTimeout(() => {
+            let app = new Vue({
+            el:"#app",//用于挂载要管理的元素
+            data:{//定义数据
+                message:"你好，vuejs"
+            },
+            methods:{//定义一些方法
+
+            }
+        })
+        }, 1000);
+    </script>
+</body>
+</html>

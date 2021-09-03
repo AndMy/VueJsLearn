@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJs</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <!-- 
+            v-bind指令
+            1、绑定属性:src,href等 v-bind:src="http://"
+            2、缩写: :
+            3、v-bind:属性="对象，数组，方法"
+        -->
+        <img v-bind:src="imageUrl" alt="">
+        <a :href="href">百度一下</a>
+    </div>
+    
+    <script src="../js/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:"#app",//用于挂载要管理的元素
+            data:{//定义数据
+                message:"你好，vuejs",
+                imageUrl:"https://img2.baidu.com/it/u=1070003001,653753576&fm=26&fmt=auto&gp=0.jpg",
+                href:"https://www.baidu.com/"
+            },
+            methods:{//定义一些方法
+
+            }
+        })
+    </script>
+</body>
+</html>
