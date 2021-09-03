@@ -1,0 +1,16 @@
+解决办法
+
+执行下面的代码
+sudo npm install -g cnpm --registry=https://registry.npm.taobao.org
+下载完成之后执行
+npm install
+然后
+
+npm run dev
+发现会让执行
+
+npm audit fix
+再执行
+
+npm audit fix --force
+然后不管修没修复，执行修复的时候卡没卡住，如果卡住了就control c 然后就可以启动项目了
