@@ -10,10 +10,37 @@
   <div id="app">
     <!--
       v-on 修饰符
-      
+        1、-- @click.stop
+        **事件冒泡事件传递;点击button时，div也会执行点击事件
+        **加上.stop后会阻止传递
+        2、@click.prevent
+        **阻止默认事件
+        3、@keyup或@keydown
+        **监听键盘的点击；@keyup或@keydown,后面跟修饰符如enter回车键
+        4、@click.native
+        **自定义组件
+        5、@click.once 只触发一次
     -->
-
-    <button @click="btn1Click">按钮1</button>
+    <!-- @click.stop -->
+    <div @click="divClick">
+      <button @click.stop="btnClick">按钮</button>
+    </div>
+    <br>
+    <!-- @click.prevent -->
+    <form action="baidu">
+      <input type="submit" value="提交" @click.prevent="submitClick">
+    </form>
+    <br>监听键盘抬起
+    <!-- @keyup监听键盘抬起 -->
+    <input @keyup="keyup">
+    <br>监听键盘回车键
+    <!-- @keyup.enter监听键盘回车键 -->
+    <input @keyup.enter="keyupEnter">
+    <!-- @click.native -->
+    <br>
+    <!-- <cpn @click.native="cpnClick"></cpn> -->
+    <!-- @click.once -->
+    <button @click.once="onceClick">只触发一次</button>
   </div>
   <script src="../js/vue.js"></script>
   <script>
@@ -24,11 +51,23 @@
         count:0
       },
       methods: {//定义一些方法
-        btn1Click() {
-          console.log('btn1Click')
+        divClick() {
+          console.log('divClick')
         },
-        btn2Click(abc) {
-          console.log('-------',abc)
+        btnClick(abc) {
+          console.log('btnClick')
+        },
+        submitClick(){
+          console.log('submitClick')
+        },
+        keyup(){
+          console.log('keyup')
+        },
+        keyupEnter(){
+          console.log('keyupEnter')
+        },
+        onceClick(){
+          console.log('onceClick')
         }
       }
     })

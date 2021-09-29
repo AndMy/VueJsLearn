@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>VueJs</title>
+</head>
+
+<body >
+  <div id="app">
+    <!--
+      v-if 的使用
+      v-else 的使用
+    -->
+    <h1 v-if='status'>{{message}}</h1>
+    <h2 v-else>status为false时显示</h2>
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#app",//用于挂载要管理的元素
+      data: {//定义数据
+        message: "你好，vuejs",
+        count:0,
+        status:true
+      },
+      methods: {//定义一些方法
+
+      }
+    })
+  </script>
+</body>
+
+</html>
