@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>VueJs</title>
+</head>
+
+<body >
+  <div id="app">
+    <!--
+          v-on 基本使用
+      1、语法： v-on:click="方法名称";方法名称什么时候加()什么时候不加()
+      2、语法糖: v-on --> @
+    -->
+    <h2>{{count}}</h2>
+
+    <button v-on:click="increment">+</button>
+    <button @click="decrement">-</button>
+    <script src="../js/vue.js"></script>
+  </div>
+
+  <script>
+    let app = new Vue({
+      el: "#app",//用于挂载要管理的元素
+      data: {//定义数据
+        message: "你好，vuejs",
+        count:0
+      },
+      methods: {//定义一些方法
+        increment(){
+          this.count ++
+        },
+        decrement(){
+          this.count --
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

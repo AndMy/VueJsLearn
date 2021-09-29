@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>VueJs</title>
+  <meta charset="UTF-8">
+  <title>VueJs</title>
 </head>
+
 <body>
-    <div id="app">{{message}}</div>
-    <!-- 对象字面量( 用{}来表示 )
+  <div id="app">{{message}}</div>
+  <!-- 对象字面量( 用{}来表示 )
        1、属性的增强写法
        2、函数的增强写法
     -->
-    <script src="../js/vue.js"></script>
-    <script>
-        let app = new Vue({
-            el:"#app",//用于挂载要管理的元素
-            data:{//定义数据
-                message:"你好，vuejs"
-            },
-            methods:{//定义一些方法
+  <script src="../js/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#app",//用于挂载要管理的元素
+      data: {//定义数据
+        message: "你好，vuejs"
+      },
+      methods: {//定义一些方法
 
-            }
-        })
-        //1、属性的增强写法
-        const name = 'Yang'
-        const age = 18
-        const height = 1.82
+      }
+    })
+    //1、属性的增强写法
+    const name = 'Yang'
+    const age = 18
+    const height = 1.82
         //ES5写法
         // const obj = {
         //     name:name,
@@ -68,6 +70,7 @@
         //         console.log('在吃饭')
         //     }
         // }
-    </script>
+  </script>
 </body>
+
 </html>
