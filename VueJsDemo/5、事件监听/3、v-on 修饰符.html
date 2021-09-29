@@ -9,15 +9,11 @@
 <body >
   <div id="app">
     <!--
-          v-on 基本使用
-      1、语法： v-on:click="方法名称";方法名称什么时候加()什么时候不加()
-      2、语法糖: v-on -> @
+      v-on 修饰符
+      
     -->
-    <h2>{{count}}</h2>
 
-    <button v-on:click="increment">+</button>
-    <button @click="decrement">-</button>
-
+    <button @click="btn1Click">按钮1</button>
   </div>
   <script src="../js/vue.js"></script>
   <script>
@@ -28,11 +24,11 @@
         count:0
       },
       methods: {//定义一些方法
-        increment(){
-          this.count ++
+        btn1Click() {
+          console.log('btn1Click')
         },
-        decrement(){
-          this.count --
+        btn2Click(abc) {
+          console.log('-------',abc)
         }
       }
     })
