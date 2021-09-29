@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>VueJs</title>
-  <style>
+    <meta charset="UTF-8">
+    <title>VueJs</title>
+    <style>
 
-  </style>
+    </style>
 </head>
-
 <body>
-  <div id="app">
-    <!--
+    <div id="app">
+        <!--
             计算属性的完整方法
 
             需求：将fistName和lastName拼接起来
         -->
-    <!-- 常规写法 -->
-    <h1>{{firstName + ' ' + lastName}}</h1>
-    <h1>{{getFullName()}}</h1>
-    <!-- 计算属性 -->
-    <h1>{{fullName}}</h1>
-  </div>
+        <!-- 常规写法 -->
+        <h1>{{firstName + ' ' + lastName}}</h1>
+        <h1>{{getFullName()}}</h1>
+        <!-- 计算属性 -->
+        <h1>{{fullName}}</h1>
+    </div>
 
-  <script src="../js/vue.js"></script>
-  <script>
-    let app = new Vue({
-      el: "#app",//用于挂载要管理的元素
-      data: {//定义数据
-        message: "你好，vuejs",
-        firstName: "Yang",
-        lastName: "MingYan"
-      },
-      computed: {//计算属性,里面定义一些方法,有缓存,效率更高
-        //计算属性的简写
-        // fullName: function(){
-        //     return this.firstName+' '+this.lastName ;
-        // }
-        fullName: {//对象,
-          //计算属性的完整方法
-          // set: function(newValue){
-          //     console.log('ddddddd=='+newValue)
-          // },
-          // get: function(){
-          //     return this.firstName + ' ' +this.lastName
-          // }
-          get: function () {//只读属性
-            return this.firstName + ' ' + this.lastName
-          }
-        }
-      },
-      methods: {//定义一些方法
-        getFullName() {
-          return this.firstName + ' ' + this.lastName;
-        }
-      }
-    })
-  </script>
+    <script src="../js/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:"#app",//用于挂载要管理的元素
+            data:{//定义数据
+                message:"你好，vuejs",
+                firstName: "Yang",
+                lastName: "MingYan"
+            },
+            computed:{//计算属性,里面定义一些方法,有缓存,效率更高
+                //计算属性的简写
+                // fullName: function(){
+                //     return this.firstName+' '+this.lastName ;
+                // }
+                fullName:{//对象,
+                    //计算属性的完整方法
+                    // set: function(newValue){
+                    //     console.log('ddddddd=='+newValue)
+                    // },
+                    // get: function(){
+                    //     return this.firstName + ' ' +this.lastName
+                    // }
+                    get: function(){//只读属性
+                        return this.firstName + ' ' +this.lastName
+                    }
+                }
+            },
+            methods: {//定义一些方法
+                getFullName(){
+                    return this.firstName+' '+this.lastName ;
+                }
+            }
+        })
+    </script>
 </body>
-
+>>>>>>> 2ab8ea1d1e3805f204883c0889c7b79f921794e1
 </html>
