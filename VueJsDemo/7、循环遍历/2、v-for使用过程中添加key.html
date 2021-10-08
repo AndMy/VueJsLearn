@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>VueJs</title>
+</head>
+
+<body >
+  <div id="app">
+    <!--
+      1、v-for 使用过程中添加key
+        在下面列子中C和D中添加F元素
+        --使用names.splice插入：names.splice(3,0,'F');
+        --不绑定:key,插入式性能很差，从插入的位置一次替换
+        --绑定:key;这个key需要和value一一对应，通过key来对应找到插入的位置
+        --所以在写v-for时建议写key属性
+    -->
+    <!-- v-for基本使用 -->
+    <ul>
+      <li v-for='item in names'>{{item}}</li>
+    </ul>
+    <!-- 建议写key -->
+    <ul>
+      <li v-for='item in names' :key='item'>{{item}}</li>
+    </ul>
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#app",//用于挂载要管理的元素
+      data: {//定义数据
+        message: "你好，vuejs",
+        names:['A','B','C','D','E']
+      },
+      methods: {//定义一些方法
+
+      }
+    })
+  </script>
+</body>
+
+</html>

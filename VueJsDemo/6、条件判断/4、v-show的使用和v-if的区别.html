@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>VueJs</title>
+</head>
+
+<body >
+  <div id="app">
+    <!--
+      1、v-show 的使用
+      2、v-if和v-show的区别
+        如果为false时，v-if直接从dom中删除掉
+        如果为false时，v-show只是给我们的元素添加一个行内样式；display:none
+        **所以来回切换的时候v-show性能更好一些
+    -->
+    <h1 v-if='status'>{{message}}</h1>
+    <h1 v-show='status'>{{message}}</h1>
+    <h2 v-else>status为false时显示</h2>
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#app",//用于挂载要管理的元素
+      data: {//定义数据
+        message: "你好，vuejs",
+        count:0,
+        status:true
+      },
+      methods: {//定义一些方法
+
+      }
+    })
+  </script>
+</body>
+
+</html>
